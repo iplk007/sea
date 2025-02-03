@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Shore International</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+@font-face {
+    font-family: 'Sugar Magic';
+    src: url('img/Sugar Magic - Personal Use Only.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.section-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-section {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #2a5298;
+}
+
+.info-section p, .info-section ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+.info-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Ensure image comes after the title on mobile */
+@media (max-width: 768px) {
+    .topimg {
+        flex-direction: column-reverse; /* Reverse the column order for mobile */
+    }
+
+    .section-img {
+        margin-bottom: 15px; /* Add space below the image */
+    }
+
+    .info-section h2 {
+        margin-top: 20px; /* Add space above the title */
+    }
+}
+
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .carousel-item img {
+            height: 100vh;
+            object-fit: cover;
+        }
+        .carousel-overlay {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 6rem;
+            font-weight: bold;
+            font-family: 'Sugar Magic', sans-serif;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+        .carousel-btn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .about-section {
+            padding: 80px 40px;
+            background: linear-gradient(to bottom, #000000, #2a5298);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+        }
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+            max-width: 600px;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        .about-links {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+            max-width: 400px;
+        }
+        .about-links a {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .about-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Responsive: Stack into one column on mobile */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: justify;
+            }
+            .about-section {
+                padding: 0px 0px 0px 0px;
+            }
+            .about-text, .about-links {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+.backc{
+    background: linear-gradient(to bottom, #0c172b, #000000); /* Stylish gradient background */
+    padding-top: 30px;
+
+}
+.image-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            padding: 20px;
+            max-width: 100%;
+            margin: auto;
+        }
+        .image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Auto crop to fit */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.5s ease-in-out;
+        }
+        /* Mobile View: 2 images per row, total 4 */
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 90%;
+            }
+        }
+
+        footer {
+    background-color: #000000;
+    padding: 20px 20px;
+    color: #c2bdbd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.footer-details,
+.useful-links,
+.customer-service,
+.whatsapp-form {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-details h4,
+.useful-links h4,
+.customer-service h4,
+.whatsapp-form h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-details p,
+.customer-service p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.useful-links a {
+    display: block;
+    font-size: 0.9rem;
+    color: #c2bdbd;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.useful-links a:hover {
+    color: #ffffff;
+}
+
+.customer-service p i {
+    color: #25D366;
+    margin-right: 8px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #25D366;
+}
+
+.whatsapp-form input,
+.whatsapp-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.whatsapp-form button {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.whatsapp-form button:hover {
+    background-color: #20b558;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .social-icon {
+        margin: 0 10px;
+    }
+}
+       
+    </style>
+</head>
+<body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a style="text-transform: uppercase;" class="navbar-brand" href="#"><img style="max-height: 40px; margin-right: 5px; " src="img/logo.png" alt="">Sea Shore</a>
+            <div class="d-flex align-items-center">
+                <a href="#whatsappForm" class="btn btn-success">Contact Us</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Fullscreen Carousel -->
+    <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/pebble stone works on floor (1).png" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/pebble stone works on floor (1).png" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/realistic pebble stone works on floor.png" class="d-block w-100" alt="Image 3">
+            </div>
+        </div>
+        <!-- <div class="carousel-overlay">Sea Shore</div> -->
+        <a href="#about-us" class="carousel-btn" id="knowMoreBtn" >Know More</a>
+    </div>
+
+    <div class="backc">
+    <h2 style="margin-left: 20px; color: aliceblue;">OUR WORKS</h2>
+    <div class="image-grid" id="imageGrid"></div>
+</div>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="about-section">
+        <div class="about-container">
+            <!-- Left Column: About Us Text -->
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Sea Shore International is a trusted supplier of natural stones in Oman, specializing in premium natural slate stones, pebble stones, and decorative landscaping stones. With a commitment to quality and durability, we offer a wide selection of natural stone products for residential, commercial, and landscaping projects.</p>
+                <p>Our extensive range includes high-quality slate stones, polished pebbles, garden pebbles, river stones, paving stones, and wall cladding stones, carefully sourced to enhance your interiors and exteriors. Whether you need durable flooring solutions, elegant wall décor, or unique outdoor landscaping materials, we provide customized natural stone solutions to meet diverse customer requirements.</p>
+                <p>At Sea Shore International, we ensure superior craftsmanship, competitive pricing, and timely delivery across Oman. Choose us as your reliable stone supplier and transform your spaces with the timeless beauty of natural stones.</p>
+            </div>
+
+            <!-- Right Column: Clickable Links -->
+            <div class="about-links">
+                <a href="#PebblePaving">Pebble Stone Paving</a>
+                <a href="#Natural">Natural Cut Stones</a>
+                <a href="#PebbleStones">Pebble Stones</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- Pebble Stones -->
+    <section class="container my-5 info-section">
+        <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-md-6">
+                <img src="img/pebble stone.png" class="section-img" alt="Pebble Stones">
+            </div>
+    
+            <!-- Text Column -->
+            <div id="PebbleStones" class="col-md-6">
+                <h2>Pebble Stones</h2>
+                <p>Pebble stones are small, rounded stones that are naturally formed by water, usually through the process of erosion. They come in a variety of shapes, colors, and sizes, and are commonly found in riverbeds, beaches, or lakeshores.</p>
+                <p>Because of their smooth texture and attractive appearance, pebble stones are often used for landscaping, decorative garden features, walkways, and even in aquariums or water features.</p>
+                <p>They can also be used indoors for things like mosaic tiles, backsplashes, and accent pieces. The stones are available in a range of colors, including gray, white, black, beige, and even multicolored varieties.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Pebble Stone Paving -->
+    <section class="container my-5 info-section">
+        <div class="row topimg align-items-center">
+            <!-- Left Column: Text -->
+            <div id="PebblePaving" class="col-md-6 order-md-1">
+                <h2>Pebble Stone Paving</h2>
+                <p>Pebble stone paving is a decorative and functional technique that uses natural or artificial pebbles embedded in a concrete or resin base to create visually appealing surfaces. It's a popular choice for outdoor and indoor spaces due to its aesthetic charm, durability, and versatility.</p>
+                
+                <h4>Characteristics of Pebble Stone Paving:</h4>
+                <ul>
+                    <li><strong>Natural Appearance:</strong> Pebbles come in various shapes, sizes, and colors, allowing for unique and natural designs.</li>
+                    <li><strong>Material Variety:</strong> Typically uses river stones, quartz, marble, or basalt pebbles, available in polished or unpolished finishes.</li>
+                    <li><strong>Durability:</strong> Strong and long-lasting, especially when combined with resin or concrete.</li>
+                    <li><strong>Textured Surface:</strong> Provides a non-slip surface, making it ideal for areas exposed to water or foot traffic.</li>
+                    <li><strong>Customizable:</strong> Can be designed in patterns, mosaics, or uniform spreads.</li>
+                </ul>
+
+                <h4>Common Uses of Pebble Stone Paving:</h4>
+                <ul>
+                    <li><strong>Driveways:</strong> Durable and visually appealing, it can handle vehicular traffic.</li>
+                    <li><strong>Walkways and Pathways:</strong> Used in gardens, parks, and residential areas for aesthetic walkways.</li>
+                    <li><strong>Patios and Decks:</strong> Creates a relaxing, natural ambiance.</li>
+                    <li><strong>Pool Surrounds:</strong> The non-slip surface and water resistance make it ideal for pools.</li>
+                    <li><strong>Interior Floors and Walls:</strong> Adds a luxurious touch to bathrooms, spa areas, or accent walls.</li>
+                    <li><strong>Landscaping:</strong> Used for edging flower beds, water features, or decorative garden designs.</li>
+                </ul>
+            </div>
+
+            <!-- Right Column: Image -->
+            <div class="col-md-6 order-md-2">
+                <img src="img/realistic pebble stones paving in Peaky Blinders theme.png" class="section-img" alt="Pebble Stone Paving">
+            </div>
+        </div>
+    </section>
+
+    <!-- Natural Cut Stones -->
+    <section class="container my-5 info-section">
+        <div class="row align-items-center">
+            <!-- Left Column: Image -->
+            <div class="col-md-6">
+                <img src="img/Natural Cut Stones paving on wall.png" class="section-img" alt="Natural Cut Stones">
+            </div>
+            
+            <!-- Right Column: Information -->
+            <div id="Natural" class="col-md-6">
+                <h2>Natural Cut Stones</h2>
+                <p>Natural cut stone refers to stone that has been quarried and shaped into specific dimensions or forms for use in construction, decoration, or landscaping. Unlike rough or unprocessed stone, cut stone is carefully worked to achieve a desired size, shape, and finish while retaining its natural characteristics.</p>
+                
+                <h4>Characteristics of Natural Cut Stone:</h4>
+                <ul>
+                    <li><strong>Variety of Materials:</strong> Common types include limestone, sandstone, granite, marble, travertine, and slate. Each offers unique properties like color, texture, and durability.</li>
+                    <li><strong>Precision:</strong> Cut stones are processed into precise sizes and shapes for easy installation and a polished appearance.</li>
+                    <li><strong>Surface Finishes:</strong> Options include polished, honed, bush-hammered, flamed, tumbled, or natural cleft, depending on the intended use.</li>
+                    <li><strong>Durability:</strong> Suitable for long-term use in various applications.</li>
+                    <li><strong>Color and Texture:</strong> Available in a wide range of colors, veining, and textures based on the stone type and quarry source.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Left Column: Company Information -->
+            <div class="footer-details">
+                <h4>Sea Shore International</h4>
+                <p>Sea Shore International provides exceptional services in civil contracting and maintenance, specializing in tiles, interlock works, aluminium, glass, and steel fabrication.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+    
+            <!-- Middle Left Column: Useful Links -->
+            <div class="useful-links">
+                <h4>Useful Links</h4>
+                <a href="#PebblePaving">Pebble Stone Paving</a>
+                <a href="#Natural">Natural Cut Stones</a>
+                <a href="#PebbleStones">Pebble Stones</a>
+            </div>
+    
+            <!-- Middle Right Column: Customer Service -->
+            <div class="customer-service">
+                <h4>Customer Service</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Muscat, Sultanate of Oman<br>P.O.Box: 1124, PC: 112</p>
+                <p><i class="fas fa-phone-alt"></i> +968 97627743<br>+968 96956775</p>
+                <p><i class="fas fa-envelope"></i> seashoreinternationaloman@gmail.com</p>
+            </div>
+    
+            <!-- Right Column: WhatsApp Form -->
+            <div class="whatsapp-form">
+                <h4>Send us a message</h4>
+                <form id="whatsappForm">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="location" placeholder="Your Location" required>
+                    <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="button" onclick="sendWhatsAppMessage()">Send Message</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Sea Shore International. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll script for older browsers
+        document.getElementById("knowMoreBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector("#about-us").scrollIntoView({ behavior: "smooth" });
+        });
+
+        const imagePaths = [
+            "img/1.jpeg", "img/2.jpeg", "img/3.jpeg", "img/4.jpeg", "img/5.jpeg",
+            "img/6.jpeg", "img/7.jpeg", "img/8.jpeg", "img/9.jpeg", "img/10.jpeg"
+        ];
+
+        let gridSize = window.innerWidth > 768 ? 5 : 4; // 5 images for desktop, 4 for mobile
+        const imageGrid = document.getElementById("imageGrid");
+
+        function getRandomUniqueImages(count, excludeList = []) {
+            let availableImages = imagePaths.filter(img => !excludeList.includes(img));
+            let selectedImages = [];
+            
+            while (selectedImages.length < count && availableImages.length > 0) {
+                let randomIndex = Math.floor(Math.random() * availableImages.length);
+                selectedImages.push(availableImages[randomIndex]);
+                availableImages.splice(randomIndex, 1); // Remove used image to avoid repetition
+            }
+            return selectedImages;
+        }
+
+        function getRandomInterval() {
+            return Math.floor(Math.random() * 4 + 4) * 1000; // Random 1s, 2s, or 3s
+        }
+
+        function changeImage(imgElement) {
+            let currentImages = getUsedImages();
+            let newImage = getRandomUniqueImages(1, currentImages)[0]; // Get unique image
+            
+            imgElement.style.opacity = "0"; // Fade out effect
+            setTimeout(() => {
+                imgElement.src = newImage;
+                imgElement.dataset.currentImage = newImage; // Store the new image
+                imgElement.style.opacity = "1"; // Fade in effect
+                setTimeout(() => changeImage(imgElement), getRandomInterval());
+            }, 500); // Fade-out duration
+        }
+
+        function getUsedImages() {
+            return Array.from(imageGrid.children).map(img => img.dataset.currentImage);
+        }
+
+        function setupGrid() {
+            imageGrid.innerHTML = ""; // Clear existing grid
+            gridSize = window.innerWidth > 768 ? 5 : 4; // Adjust grid size based on screen width
+
+            let usedImages = getRandomUniqueImages(gridSize); // Get unique images for initial display
+
+            usedImages.forEach(image => {
+                let img = document.createElement("img");
+                img.src = image;
+                img.dataset.currentImage = image; // Store image in dataset
+                imageGrid.appendChild(img);
+                setTimeout(() => changeImage(img), getRandomInterval());
+            });
+        }
+
+        window.addEventListener("resize", setupGrid); // Adjust grid on resize
+        setupGrid(); // Initial setup
+
+        function sendWhatsAppMessage() {
+            const name = document.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const message = document.getElementById("message").value;
+
+            if (name && location && message) {
+                const encodedMessage = encodeURIComponent(
+                    `Hello, my name is ${name}  from ${location}. :- ${message}`
+                );
+                const phoneNumber = "+9190727905"; // Replace with your WhatsApp number
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+                window.open(whatsappURL, "_blank");
+            } else {
+                alert("Please fill out all fields before sending a message.");
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
